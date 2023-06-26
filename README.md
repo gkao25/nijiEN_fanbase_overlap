@@ -135,7 +135,7 @@ In the survey, native English is defined as a language you use on a near daily b
 
 **Number of oshis**
 
-<iframe src="visualization/proportion of english users.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/distribution of number of oshis.png" frameBorder=20></iframe>
 
 Most respondents have 1-5 oshis, and one respondent oshis all the NijiEN livers.
 
