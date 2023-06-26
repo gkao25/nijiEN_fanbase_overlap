@@ -142,7 +142,7 @@ Most respondents have 1-5 oshis, and one respondent oshis all the NijiEN livers.
 
 ### Demographic distribution for each liver
 
-For a total of all 30 livers, we created visualizations for their demographics, including gender, age, time zone, and Native English. Due to the sheer amount of graphs, they will not be embedded here on the website, but you can find them [here]<https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization/livers%20demographics>.
+For a total of all 30 livers, we created visualizations for their demographics, including gender, age, time zone, and Native English. Due to the sheer amount of graphs, they will not be embedded here on the website, but you can find them [here](https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization/livers%20demographics).
 
 
 ### Overlap between each liver
@@ -151,7 +151,7 @@ We wanted to use a heatmap to show the correlation between each liver.
 
 <iframe src="visualization/all livers heatmap.png" width=800 height=600 frameBorder=0></iframe>
 
-Seaborn plots all 30 rows/columns but doesn't label all of them. We included the zoomed-in heatmaps [here]<https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization> for you to see the labels more clearly. 
+Seaborn plots all 30 rows/columns but doesn't label all of them. We included the zoomed-in heatmaps [here](https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization) for you to see the labels more clearly. 
 
 The diagonal white line has a trivial correlation of 1.0, because if a viewer oshis X, then of course they oshi X. Therefore, the heatmap scale is capped at 0.5 to make the colors easier to differentiate. The lighter the color, the higher the correlation, meaning it more likely that a viewer oshis these two livers at the same time. 
 
