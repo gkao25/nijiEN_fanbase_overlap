@@ -142,4 +142,14 @@ Most respondents have 1-5 oshis, and one respondent oshis all the NijiEN livers.
 
 ### Demographic distribution for each liver
 
-For a total of all 30 livers, we created visualizations for their demographics, including gender, age, time zone, and Native English. Due to the sheer amount of graphs, they will not be embedded here on the website, but you can find them [here]
+For a total of all 30 livers, we created visualizations for their demographics, including gender, age, time zone, and Native English. Due to the sheer amount of graphs, they will not be embedded here on the website, but you can find them [here]<https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization/livers%20demographics>.
+
+
+### Overlap between each liver
+
+We wanted to use a heatmap to show the correlation between each liver.
+
+<iframe src="visualization/all livers heatmap.png" width=800 height=600 frameBorder=0></iframe>
+
+Seaborn plots all 30 rows/columns but doesn't label all of them. We included the zoomed-in heatmaps [here]<https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization> for you to see the labels more clearly. 
+
