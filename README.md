@@ -87,7 +87,7 @@ We did some exploratory data analysis (EDA) to see the general trends within the
 
 The number of responses we have for each liver, the most being Doppio and the least being Finana. 
 
-<iframe src="visualization/responses count by liver.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/responses count by liver.png" width=800 height=480 frameBorder=0></iframe>
 
 
 ### Univariate analysis
@@ -96,7 +96,7 @@ Visualize distributions across all respondents regardless of oshi within each co
 
 **Gender**
 
-<iframe src="visualization/proportions of gender.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/proportions of gender.png" width=800 height=480 frameBorder=0></iframe>
 
 Despite that three quarters of the people not answering their question (due to reasons explained before), most NijiEN fans are female, and interestingly, more non-binary people than males. 
 
@@ -114,28 +114,28 @@ Despite that three quarters of the people not answering their question (due to r
 | 75%   |  25       |
 | max   | 100       |
 
-<iframe src="visualization/distribution of age.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/distribution of age.png" width=800 height=480 frameBorder=0></iframe>
 
 Most NijiEN fans are teens and young adults, with the mean at 22. 
 
 
 **Time zone**
 
-<iframe src="visualization/distribution of time zone.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/distribution of time zone.png" width=800 height=480 frameBorder=0></iframe>
 
 Most people are in UTC +8, which is the time zone used in all predominantly Chinese-speaking regions. This should not be a surprise if you are familiar with the VTuber community; many viewers are in Asian time zones because the first popular VTuber is from Japan, and it has a strong influence from the anime culture (e.g. the art style), which is very popular in the Asian countries. The second most is UTC -4, which includes countries like Argentina, Brazil, and the eastern coast of Canada and USA. 
 
 
 **Native English**
 
-<iframe src="visualization/proportion of english users.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/proportion of english users.png" width=800 height=480 frameBorder=0></iframe>
 
 In the survey, native English is defined as a language you use on a near daily basis and are pretty confident about in fluency. Over 80% of the viewers are native English, which seems contradictory to the inference we made from time zones. However, even though the analysis on time zones say that most viewers are from Asia, there a some Asian countires that where English is taught universally and used as the daily language, such as Singapore and Malaysia. All livers stream primarily in English and most viewers are past a certain fluency to understand the livers clearly, but it is important not to expect all viewers to be native English and remain respectful of everyone regardless of the possible language barrier. 
 
 
 **Number of oshis**
 
-<iframe src="visualization/distribution of number of oshis.png" frameBorder=20></iframe>
+<iframe src="visualization/distribution of number of oshis.png" width=800 height=480 frameBorder=0></iframe>
 
 Most respondents have 1-5 oshis, and one respondent oshis all the NijiEN livers.
 
@@ -149,7 +149,7 @@ For a total of all 30 livers, we created visualizations for their demographics, 
 
 We wanted to use a heatmap to show the correlation between each liver.
 
-<iframe src="visualization/all livers heatmap.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/all livers heatmap.png" width=800 height=480 frameBorder=0></iframe>
 
 Seaborn plots all 30 rows/columns but doesn't label all of them. We included the zoomed-in heatmaps [here]<https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization> for you to see the labels more clearly. 
 
