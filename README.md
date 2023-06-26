@@ -44,7 +44,7 @@ A look at the original dataset:
 
 Each liver has their own column. Each row represents a respondent, and if they oshi a liver, then `True` for that colum, else `False`.
 
-`oshis_df`: Each row represents one fan and their oshis. This dataframe is merged with the original dataframe.
+`oshis_df`: Each row represents one fan and their oshis. Using row 0 as an example, this perosn ahs Vox Akuma, Uki Violet, and Fulgur Ovid as their oshis. This dataframe is then merged with the original dataframe.
 
 |    |   Pomu Rainpuff |   Elira Pendora |   Finana Ryugu |   Rosemi Lovelock |   Petra Gurin |   Selen Tatsuki |   Nina Kosaka |   Millie Parfait |   Enna Alouette |   Reimu Endou |   Luca Kaneshiro |   Shu Yamino |   Ike Eveland |   Mysta Rias |   Vox Akuma |   Sonny Brisko |   Uki Violeta |   Alban Knox |   Fulgur Ovid |   Maria Marionette |   Kyo Kaneko |   Aia Amare |   Aster Arcadia |   Scarle Yonaguni |   Ren Zotto |   Doppio Dropscythe |   Meloco Kyoran |   Hex Haywire |   Kotoka Torahime |   Ver Vermillion |
 |---:|----------------:|----------------:|---------------:|------------------:|--------------:|----------------:|--------------:|-----------------:|----------------:|--------------:|-----------------:|-------------:|--------------:|-------------:|------------:|---------------:|--------------:|-------------:|--------------:|-------------------:|-------------:|------------:|----------------:|------------------:|------------:|--------------------:|----------------:|--------------:|------------------:|-----------------:|
@@ -153,3 +153,157 @@ We wanted to use a heatmap to show the correlation between each liver.
 
 Seaborn plots all 30 rows/columns but doesn't label all of them. We included the zoomed-in heatmaps [here]<https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization> for you to see the labels more clearly. 
 
+The diagonal white line has a trivial correlation of 1.0, because if a viewer oshis X, then of course they oshi X. Therefore, the heatmap scale is capped at 0.5 to make the colors easier to differentiate. The lighter the color, the higher the correlation, meaning it more likely that a viewer oshis these two livers at the same time. 
+
+### Summary: the livers and their highest correlations with...
+
+**In order of the waves:**
+
+|                   |   highest correlation | with...          |
+|:------------------|----------------------:|:-----------------|
+| Pomu Rainpuff     |              0.352083 | Elira Pendora    |
+| Elira Pendora     |              0.352083 | Pomu Rainpuff    |
+| Finana Ryugu      |              0.341985 | Rosemi Lovelock  |
+| Rosemi Lovelock   |              0.341985 | Finana Ryugu     |
+| Petra Gurin       |              0.30871  | Elira Pendora    |
+| Selen Tatsuki     |              0.308303 | Enna Alouette    |
+| Nina Kosaka       |              0.283694 | Finana Ryugu     |
+| Millie Parfait    |              0.379463 | Enna Alouette    |
+| Enna Alouette     |              0.379463 | Millie Parfait   |
+| Reimu Endou       |              0.260313 | Elira Pendora    |
+| Luca Kaneshiro    |              0.31125  | Shu Yamino       |
+| Shu Yamino        |              0.31125  | Luca Kaneshiro   |
+| Ike Eveland       |              0.192302 | Reimu Endou      |
+| Mysta Rias        |              0.257896 | Luca Kaneshiro   |
+| Vox Akuma         |              0.178425 | Hex Haywire      |
+| Sonny Brisko      |              0.292608 | Ren Zotto        |
+| Uki Violeta       |              0.266796 | Fulgur Ovid      |
+| Alban Knox        |              0.250053 | Sonny Brisko     |
+| Fulgur Ovid       |              0.266796 | Uki Violeta      |
+| Maria Marionette  |              0.232911 | Alban Knox       |
+| Kyo Kaneko        |              0.193015 | Enna Alouette    |
+| Aia Amare         |              0.190697 | Kotoka Torahime  |
+| Aster Arcadia     |              0.201013 | Uki Violeta      |
+| Scarle Yonaguni   |              0.189534 | Maria Marionette |
+| Ren Zotto         |              0.292608 | Sonny Brisko     |
+| Doppio Dropscythe |              0.186381 | Ver Vermillion   |
+| Meloco Kyoran     |              0.267481 | Kotoka Torahime  |
+| Hex Haywire       |              0.226088 | Ver Vermillion   |
+| Kotoka Torahime   |              0.267481 | Meloco Kyoran    |
+| Ver Vermillion    |              0.226088 | Hex Haywire      |
+
+**Sorted in order of correlation:**
+
+|                   |   highest correlation | with...          |
+|:------------------|----------------------:|:-----------------|
+| Millie Parfait    |              0.379463 | Enna Alouette    |
+| Pomu Rainpuff     |              0.352083 | Elira Pendora    |
+| Finana Ryugu      |              0.341985 | Rosemi Lovelock  |
+| Shu Yamino        |              0.31125  | Luca Kaneshiro   |
+| Petra Gurin       |              0.30871  | Elira Pendora    |
+| Selen Tatsuki     |              0.308303 | Enna Alouette    |
+| Ren Zotto         |              0.292608 | Sonny Brisko     |
+| Nina Kosaka       |              0.283694 | Finana Ryugu     |
+| Meloco Kyoran     |              0.267481 | Kotoka Torahime  |
+| Uki Violeta       |              0.266796 | Fulgur Ovid      |
+| Reimu Endou       |              0.260313 | Elira Pendora    |
+| Mysta Rias        |              0.257896 | Luca Kaneshiro   |
+| Alban Knox        |              0.250053 | Sonny Brisko     |
+| Maria Marionette  |              0.232911 | Alban Knox       |
+| Ver Vermillion    |              0.226088 | Hex Haywire      |
+| Aster Arcadia     |              0.201013 | Uki Violeta      |
+| Kyo Kaneko        |              0.193015 | Enna Alouette    |
+| Ike Eveland       |              0.192302 | Reimu Endou      |
+| Aia Amare         |              0.190697 | Kotoka Torahime  |
+| Scarle Yonaguni   |              0.189534 | Maria Marionette |
+| Doppio Dropscythe |              0.186381 | Ver Vermillion   |
+| Vox Akuma         |              0.178425 | Hex Haywire      |
+
+
+Looking at the above table which disregards the trivial correlation, the **top 5 highest correlations** are:
+
+1. Millie Parfait & Enna Alouette
+2. Elira Pandora & Pomu Rainpuff
+3. Finana Ryugu & Rosemi Lovelock
+4. Shu Yamino & Luca Kaneshiro
+5. Petra Gurin & Elira Pandora 
+
+
+### Negative correlations
+
+|                   |   correlation |
+|:------------------|--------------:|
+| Vox Akuma         |   -0.0762323  |
+| Elira Pendora     |   -0.0762323  |
+| Doppio Dropscythe |   -0.0680192  |
+| Ike Eveland       |   -0.0680192  |
+| Petra Gurin       |   -0.0462684  |
+| Sonny Brisko      |   -0.0458456  |
+| Hex Haywire       |   -0.0437866  |
+| Shu Yamino        |   -0.0424765  |
+| Fulgur Ovid       |   -0.0358482  |
+| Rosemi Lovelock   |   -0.0313     |
+| Enna Alouette     |   -0.0293467  |
+| Kyo Kaneko        |   -0.0281429  |
+| Pomu Rainpuff     |   -0.0281429  |
+| Millie Parfait    |   -0.0269282  |
+| Meloco Kyoran     |   -0.0221673  |
+| Kotoka Torahime   |   -0.0210835  |
+| Maria Marionette  |   -0.0208357  |
+| Ver Vermillion    |   -0.0201546  |
+| Aster Arcadia     |   -0.0184278  |
+| Mysta Rias        |   -0.0140925  |
+| Aia Amare         |   -0.0136513  |
+| Scarle Yonaguni   |   -0.0129163  |
+| Selen Tatsuki     |   -0.0021237  |
+| Alban Knox        |    0.00082701 |
+| Uki Violeta       |    0.00550615 |
+| Luca Kaneshiro    |    0.00641654 |
+| Reimu Endou       |    0.0142914  |
+| Finana Ryugu      |    0.0238083  |
+| Nina Kosaka       |    0.029254   |
+| Ren Zotto         |    0.0405703  |
+
+Interestingly there are some negative values, which means it's very unlikely that someone oshis these two liver at the same time. 
+
+Let's see which livers are least likely to be oshi-ed by the same viewer.
+
+|                   |   lowest correlation | with...       |
+|:------------------|---------------------:|:--------------|
+| Vox Akuma         |          -0.0762323  | Elira Pendora |
+| Doppio Dropscythe |          -0.0680192  | Ike Eveland   |
+| Petra Gurin       |          -0.0462684  | Vox Akuma     |
+| Sonny Brisko      |          -0.0458456  | Vox Akuma     |
+| Hex Haywire       |          -0.0437866  | Elira Pendora |
+| Shu Yamino        |          -0.0424765  | Vox Akuma     |
+| Fulgur Ovid       |          -0.0358482  | Petra Gurin   |
+| Rosemi Lovelock   |          -0.0313     | Sonny Brisko  |
+| Enna Alouette     |          -0.0293467  | Vox Akuma     |
+| Kyo Kaneko        |          -0.0281429  | Pomu Rainpuff |
+| Millie Parfait    |          -0.0269282  | Vox Akuma     |
+| Meloco Kyoran     |          -0.0221673  | Fulgur Ovid   |
+| Kotoka Torahime   |          -0.0210835  | Kyo Kaneko    |
+| Maria Marionette  |          -0.0208357  | Hex Haywire   |
+| Ver Vermillion    |          -0.0201546  | Fulgur Ovid   |
+| Aster Arcadia     |          -0.0184278  | Fulgur Ovid   |
+| Mysta Rias        |          -0.0140925  | Meloco Kyoran |
+| Aia Amare         |          -0.0136513  | Petra Gurin   |
+| Scarle Yonaguni   |          -0.0129163  | Pomu Rainpuff |
+| Selen Tatsuki     |          -0.0021237  | Aster Arcadia |
+| Alban Knox        |           0.00082701 | Vox Akuma     |
+| Uki Violeta       |           0.00550615 | Petra Gurin   |
+| Luca Kaneshiro    |           0.00641654 | Petra Gurin   |
+| Reimu Endou       |           0.0142914  | Aster Arcadia |
+| Finana Ryugu      |           0.0238083  | Vox Akuma     |
+| Nina Kosaka       |           0.029254   | Sonny Brisko  |
+| Ren Zotto         |           0.0405703  | Aia Amare     |
+
+The **top 5 lowest correlations** are:
+
+1. Vox Akuma & Elira Pandora
+2. Doppio Dropscyte & Ike Eveland
+3. Petra Gurin & Vox Akuma
+4. Sonny Brisko & Vox Akuma
+5. Hex Haywire & Elira Pandora
+
+Some livers like Vox show up on the list multiple times as the least correlated. If we look at the distribution of the responses, Vox got the second most responses, which means correlation (both positive and negative) would become stronger. 
