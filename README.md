@@ -232,7 +232,7 @@ Looking at the above table which disregards the trivial correlation, the **top 5
 4. Shu Yamino & Luca Kaneshiro
 5. Petra Gurin & Elira Pandora 
 
-For a list of top 5 highest correlated for each liver, please see the PDF [here]()
+For a list of top 5 highest correlated for each liver, please see the PDF [here](https://github.com/gkao25/nijiEN_fanbase_overlap/blob/b2c3b8047765a563579434eedb8f25300618c094/top%205%20for%20each%20liver.pdf)
 
 ## Negative correlations
 
