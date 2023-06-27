@@ -40,8 +40,6 @@ A look at the original dataset:
 |  4 | 2023/05/21 1:00:21 AM MDT  | Fulgur Ovid                                                                                                      |      nan |    34 | UTC +7      | No                                  |
 
 
-## Steps taken for data cleaning:
-
 ### Clean the "oshis" column"
 
 Each liver has their own column. Each row represents a respondent, and if they oshi a liver, then `True` for that colum, else `False`.
@@ -232,7 +230,7 @@ Looking at the above table which disregards the trivial correlation, the **top 5
 4. Shu Yamino & Luca Kaneshiro
 5. Petra Gurin & Elira Pandora 
 
-For a list of top 5 highest correlated for each liver, please see the PDF [here](https://github.com/gkao25/nijiEN_fanbase_overlap/blob/b2c3b8047765a563579434eedb8f25300618c094/top%205%20for%20each%20liver.pdf)
+For a list of top 5 highest correlated for each liver, please see the PDF [here](https://github.com/gkao25/nijiEN_fanbase_overlap/blob/b2c3b8047765a563579434eedb8f25300618c094/top%205%20for%20each%20liver.pdf).
 
 ## Negative correlations
 
