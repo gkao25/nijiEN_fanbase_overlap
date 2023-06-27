@@ -1,14 +1,14 @@
 # Nijisanji EN Fandom Overlap
 
-Data Science project by Gloria Kao
+Data science project by Gloria Kao
 
 # Introduction
 
-Nijisanji is a famous VTuber agency company based in Japan, with an increasingly popular overseas branch known as Nijisanji EN, which is the focus of this project. For people who are completely new to the concept of VTubers, the term stands for "Virtual YouTubers," which are 2D avatars that move along to the real life persons behind these, and they create content like streaming games or singing. The word "oshi" is a person you like greatly and support, but it can also be used as a verb. 
+Nijisanji is a famous VTuber agency under the Japanese company ANYCOLOR Inc. with an increasingly popular overseas branch known as Nijisanji EN, which is the focus of this project. For people who are completely new to the concept of VTubers, the term stands for "Virtual YouTubers," which are 2D avatars that move along to the real life persons behind these, and they create content like streaming games or singing. ([Reference](https://virtualyoutuber.fandom.com/wiki/NIJISANJI)) The word "oshi" is a person you like greatly and support, but it can also be used as a verb. 
 
-The **goal of this project** is to see **which Nijisanji EN livers are most likely to have overlapping fanbases/fandoms.** *(Note: this is not a prediciton problem, we are simply making inferences)*
+### Goal 
 
-*Disclaimer*: The survey closed on June 19, 2023, which is before the announcement of Krisis. The dataset contains information for 30 livers that debuted before this date. 
+The goal of this project is to see **which Nijisanji EN livers are most likely to have overlapping fanbases/fandoms.** In other words, if a person oshi liver X, who are they also likely to oshi? *(Note: this is not a prediciton problem, we are simply exploring the data.)*
 
 
 # Data Collection
@@ -24,6 +24,8 @@ Five questions were asked:
 4. `Time zone` (in UTC) - multiple choice question
 5. `Are you native/fluent in English?` - Yes/No question
 
+*Disclaimer*: The survey closed on June 19, 2023, which is before the announcement of Krisis. The dataset contains information for 30 livers that debuted before this date. 
+
 
 # Data Cleaning
 
@@ -38,13 +40,13 @@ A look at the original dataset:
 |  4 | 2023/05/21 1:00:21 AM MDT  | Fulgur Ovid                                                                                                      |      nan |    34 | UTC +7      | No                                  |
 
 
-### Steps taken for data cleaning:
+## Steps taken for data cleaning:
 
-**Clean the "oshis" column"**
+### Clean the "oshis" column"
 
 Each liver has their own column. Each row represents a respondent, and if they oshi a liver, then `True` for that colum, else `False`.
 
-`oshis_df`: Each row represents one fan and their oshis. Using row 0 as an example, this perosn ahs Vox Akuma, Uki Violet, and Fulgur Ovid as their oshis. This dataframe is then merged with the original dataframe.
+`oshis_df`: Each row represents one fan and their oshis. Using row 0 as an example, this perosn has Vox Akuma, Uki Violeta, and Fulgur Ovid as their oshis. This dataframe is then merged with the original dataframe.
 
 |    |   Pomu Rainpuff |   Elira Pendora |   Finana Ryugu |   Rosemi Lovelock |   Petra Gurin |   Selen Tatsuki |   Nina Kosaka |   Millie Parfait |   Enna Alouette |   Reimu Endou |   Luca Kaneshiro |   Shu Yamino |   Ike Eveland |   Mysta Rias |   Vox Akuma |   Sonny Brisko |   Uki Violeta |   Alban Knox |   Fulgur Ovid |   Maria Marionette |   Kyo Kaneko |   Aia Amare |   Aster Arcadia |   Scarle Yonaguni |   Ren Zotto |   Doppio Dropscythe |   Meloco Kyoran |   Hex Haywire |   Kotoka Torahime |   Ver Vermillion |
 |---:|----------------:|----------------:|---------------:|------------------:|--------------:|----------------:|--------------:|-----------------:|----------------:|--------------:|-----------------:|-------------:|--------------:|-------------:|------------:|---------------:|--------------:|-------------:|--------------:|-------------------:|-------------:|------------:|----------------:|------------------:|------------:|--------------------:|----------------:|--------------:|------------------:|-----------------:|
@@ -55,26 +57,26 @@ Each liver has their own column. Each row represents a respondent, and if they o
 |  4 |               0 |               0 |              0 |                 0 |             0 |               0 |             0 |                0 |               0 |             0 |                0 |            0 |             0 |            0 |           0 |              0 |             0 |            0 |             1 |                  0 |            0 |           0 |               0 |                 0 |           0 |                   0 |               0 |             0 |                 0 |                0 |
 
 
-**Clean the "gender" column**
+### Clean the "gender" column
 
 Question number 2 (gender) was added later after some people had already filled out the survey, so there are a lot of missing values. We will not imputate (replace) the missing values because that would be making up false data.
 
-There are some minority genders such as bigender and genderfluid, so we grouped them into "other". In the end there are five unique values in the "gender" column: Unknown, Female, Non-binary, Male, and Other. 
+There are some minority genders such as bigender and genderfluid, so we grouped them into "other". In the end there are five unique values in the "gender" column: Male, Female, Non-binary, Unknown, and Other. 
 
 
-**Clean the "age" column**
+### Clean the "age" column
 
 On the Google Forms, a person could only answer in intergers from 1-100, so there is minimal cleaning needed. 
 
 There is one outlier at age 100, which is the possible maximum that a respondent could enter, so it seems like a troll answer. However, it is not an impossible answer, so it will be kept in the dataset. 
 
 
-**Clean the "time zone" column**
+### Clean the "time zone" column
 
-The column datatype is string and includes "UTC", which is repetitive, so we will remove that. We also converted the column datatype into numbers so they would be in order when we graph the time zones. 
+The column datatype is string (text) and includes "UTC", which is repetitive, so we will remove that. We also converted the column datatype into floating point numbers so they would be in order when we graph the time zones. 
 
 
-**Clean the "native English" column**
+### Clean the "native English" column
 
 Originally we wanted to convert the column datatype into Boolean, but we left it in "Yes/No" format for easy category visualization later. 
 
@@ -83,25 +85,27 @@ Originally we wanted to convert the column datatype into Boolean, but we left it
 
 We did some exploratory data analysis (EDA) to see the general trends within the dataset (ex. demographic distribution overall and for each liver) and also answer our big question (overlap for each liver).
 
-### A general look at the dataset
+## A general look at the dataset
 
 The number of responses we have for each liver, the most being Doppio and the least being Finana. 
 
 <iframe src="visualization/responses count by liver.png" width=800 height=500 frameBorder=0></iframe>
 
 
-### Univariate analysis
+## Univariate analysis
 
 Visualize distributions across all respondents regardless of oshi within each column variable. 
 
-**Gender**
+### Gender
 
 <iframe src="visualization/proportions of gender.png" width=800 height=500 frameBorder=0></iframe>
 
-Despite that three quarters of the people not answering their question (due to reasons explained before), most NijiEN fans are female, and interestingly, more non-binary people than males. 
+Despite the fact that three quarters of the people not answering their question (due to reasons explained before), we can see that most NijiEN fans are female, and interestingly, more non-binary people than males. 
 
 
-**Age**
+### Age
+
+**Statistical summary:**
 
 |       |       Age |
 |:------|----------:|
@@ -119,43 +123,43 @@ Despite that three quarters of the people not answering their question (due to r
 Most NijiEN fans are teens and young adults, with the mean at 22. 
 
 
-**Time zone**
+### Time zone
 
 <iframe src="visualization/distribution of time zone.png" width=800 height=500 frameBorder=0></iframe>
 
 Most people are in UTC +8, which is the time zone used in all predominantly Chinese-speaking regions. This should not be a surprise if you are familiar with the VTuber community; many viewers are in Asian time zones because the first popular VTuber is from Japan, and it has a strong influence from the anime culture (e.g. the art style), which is very popular in the Asian countries. The second most is UTC -4, which includes countries like Argentina, Brazil, and the eastern coast of Canada and USA. 
 
 
-**Native English**
+### Native English
 
 <iframe src="visualization/proportion of english users.png" width=800 height=500 frameBorder=0></iframe>
 
 In the survey, native English is defined as a language you use on a near daily basis and are pretty confident about in fluency. Over 80% of the viewers are native English, which seems contradictory to the inference we made from time zones. However, even though the analysis on time zones say that most viewers are from Asia, there a some Asian countires that where English is taught universally and used as the daily language, such as Singapore and Malaysia. All livers stream primarily in English and most viewers are past a certain fluency to understand the livers clearly, but it is important not to expect all viewers to be native English and remain respectful of everyone regardless of the possible language barrier. 
 
 
-**Number of oshis**
+### Number of oshis
 
 <iframe src="visualization/distribution of number of oshis.png" width=800 height=500 frameBorder=0></iframe>
 
 Most respondents have 1-5 oshis, and one respondent oshis all the NijiEN livers.
 
 
-### Demographic distribution for each liver
+## Demographic distribution for each liver
 
 For a total of all 30 livers, we created visualizations for their demographics, including gender, age, time zone, and Native English. Due to the sheer amount of graphs, they will not be embedded here on the website, but you can find them [here](https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization/livers%20demographics).
 
 
-### Overlap between each liver
+## Overlap between each liver
 
 We wanted to use a heatmap to show the correlation between each liver.
 
-<iframe src="visualization/all livers heatmap.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="visualization/all livers heatmap.png" width=800 height=500 frameBorder=0></iframe>
 
 Seaborn plots all 30 rows/columns but doesn't label all of them. We included the zoomed-in heatmaps [here](https://github.com/gkao25/nijiEN_fanbase_overlap/tree/733fdc2f55787abe3acd04762b69937f5955cf63/visualization) for you to see the labels more clearly. 
 
 The diagonal white line has a trivial correlation of 1.0, because if a viewer oshis X, then of course they oshi X. Therefore, the heatmap scale is capped at 0.5 to make the colors easier to differentiate. The lighter the color, the higher the correlation, meaning it more likely that a viewer oshis these two livers at the same time. 
 
-### Summary: the livers and their highest correlations with...
+## Summary: the livers and their highest correlations with...
 
 **In order of the waves:**
 
@@ -220,7 +224,7 @@ The diagonal white line has a trivial correlation of 1.0, because if a viewer os
 | Vox Akuma         |              0.178425 | Hex Haywire      |
 
 
-Looking at the above table which disregards the trivial correlation, the **top 5 highest correlations** are:
+Looking at the above table which disregards the trivial correlation, the **top 5 highest correlations** are between:
 
 1. Millie Parfait & Enna Alouette
 2. Elira Pandora & Pomu Rainpuff
@@ -229,40 +233,7 @@ Looking at the above table which disregards the trivial correlation, the **top 5
 5. Petra Gurin & Elira Pandora 
 
 
-### Negative correlations
-
-|                   |   correlation |
-|:------------------|--------------:|
-| Vox Akuma         |   -0.0762323  |
-| Elira Pendora     |   -0.0762323  |
-| Doppio Dropscythe |   -0.0680192  |
-| Ike Eveland       |   -0.0680192  |
-| Petra Gurin       |   -0.0462684  |
-| Sonny Brisko      |   -0.0458456  |
-| Hex Haywire       |   -0.0437866  |
-| Shu Yamino        |   -0.0424765  |
-| Fulgur Ovid       |   -0.0358482  |
-| Rosemi Lovelock   |   -0.0313     |
-| Enna Alouette     |   -0.0293467  |
-| Kyo Kaneko        |   -0.0281429  |
-| Pomu Rainpuff     |   -0.0281429  |
-| Millie Parfait    |   -0.0269282  |
-| Meloco Kyoran     |   -0.0221673  |
-| Kotoka Torahime   |   -0.0210835  |
-| Maria Marionette  |   -0.0208357  |
-| Ver Vermillion    |   -0.0201546  |
-| Aster Arcadia     |   -0.0184278  |
-| Mysta Rias        |   -0.0140925  |
-| Aia Amare         |   -0.0136513  |
-| Scarle Yonaguni   |   -0.0129163  |
-| Selen Tatsuki     |   -0.0021237  |
-| Alban Knox        |    0.00082701 |
-| Uki Violeta       |    0.00550615 |
-| Luca Kaneshiro    |    0.00641654 |
-| Reimu Endou       |    0.0142914  |
-| Finana Ryugu      |    0.0238083  |
-| Nina Kosaka       |    0.029254   |
-| Ren Zotto         |    0.0405703  |
+## Negative correlations
 
 Interestingly there are some negative values, which means it's very unlikely that someone oshis these two liver at the same time. 
 
@@ -298,7 +269,7 @@ Let's see which livers are least likely to be oshi-ed by the same viewer.
 | Nina Kosaka       |           0.029254   | Sonny Brisko  |
 | Ren Zotto         |           0.0405703  | Aia Amare     |
 
-The **top 5 lowest correlations** are:
+The **top 5 lowest correlations** are between:
 
 1. Vox Akuma & Elira Pandora
 2. Doppio Dropscyte & Ike Eveland
@@ -307,3 +278,11 @@ The **top 5 lowest correlations** are:
 5. Hex Haywire & Elira Pandora
 
 Some livers like Vox show up on the list multiple times as the least correlated. If we look at the distribution of the responses, Vox got the second most responses, which means correlation (both positive and negative) would become stronger. 
+
+Of all 206 respondents who oshi Vox, only 17 people have him as their only oshi. From analysing this dataset only, it is hard to conclude why Vox shows up on the list of lowest correlations so many times. 
+
+
+# Ethics and Privacy
+
+The data was collected anonymously by me (Gloria Kao). Google login was required to make sure that a person does not fill out the form multiple times, which would increase correlation between certain livers in the dataset, but no personal information such as name or email was collected. The survey was posted on Twitter and Discord without any extra incentive or advertisement, so data is collected from people by their voluntary will and with their consent. There is minimal ethics concern.
+
