@@ -4,7 +4,7 @@ Data science project by Gloria Kao
 
 # Introduction
 
-Nijisanji is a famous VTuber agency under the Japanese company ANYCOLOR Inc. with an increasingly popular overseas branch known as Nijisanji EN, which is the focus of this project. For people who are completely new to the concept of VTubers, the term stands for "Virtual YouTubers," which are 2D avatars that move along to the real life persons behind these, and they create content like streaming games or singing. ([Reference](https://virtualyoutuber.fandom.com/wiki/NIJISANJI)) The word "oshi" is a person you like greatly and support, but it can also be used as a verb. 
+Nijisanji is a famous VTuber agency under the Japanese company ANYCOLOR Inc. with an increasingly popular overseas branch known as Nijisanji EN, which is the focus of this project. For people who are completely new to the concept of VTubers, the term stands for "Virtual YouTubers," which are 2D avatars that move along to the real life persons behind the screens, and they create content like streaming games or singing. ([Reference](https://virtualyoutuber.fandom.com/wiki/NIJISANJI)) The word "oshi" is a person you like greatly and support, but it can also be used as a verb. 
 
 ### Goal 
 
